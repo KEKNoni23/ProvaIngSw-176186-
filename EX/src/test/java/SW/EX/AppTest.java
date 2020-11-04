@@ -1,38 +1,28 @@
 package SW.EX;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import java.util.Arrays;
+import java.util.List;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import org.junit.BeforeClass;
+import org.junit.Test;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+public class AppTest {
+	private static MyListUtil listUtil;
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+	@BeforeClass
+	public static void prepare() {
+		listUtil = new MyListUtil();
+	}
+
+	@Test
+	public void ordineDecrescenteWorks() {
+		List<Integer> L = Arrays.asList(11, 13, 17, 23, 31, 41, 53, 67, 83, 101);
+		listUtil.ordineDecrescente(L);
+	}
+
+	@Test
+	public void ordineCrescenteWorks() {
+		List<Integer> L = Arrays.asList(101, 2, 67, 53, 41, 31, 23, 17, 13, 11);
+		listUtil.ordineDecrescente(L);
+	}
 }
