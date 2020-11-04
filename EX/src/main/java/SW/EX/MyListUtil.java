@@ -19,5 +19,4 @@ public class MyListUtil {
 		return L;
 
 	}
-
 }
